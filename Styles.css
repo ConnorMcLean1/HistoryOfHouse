@@ -1,0 +1,1387 @@
+/*Style*/
+
+
+/*-------------Global Style---------------*/
+body {
+	margin:0;
+    padding: 0;
+    background-color: #333333; /*background colour*/
+    font-family: 'Poppins', sans-serif;/* Font family */
+    
+    /* Grid positioning */
+    grid-row: 3/5;
+    grid-column: 1/4;
+    
+    /* Background image properties */
+    background-image: url(_images/_House3.jpg);
+    background-attachment: fixed; /* Fixed background attachment */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Center the background image */
+}
+
+/* h1 elements */
+h1 {
+    font-size: 4em; /*font size*/
+    color: #818867; /*font color*/
+    font-size: 900; /*font width*/
+    text-shadow: 1px 5px 1px black;
+    
+}
+/* h2 elements */
+h2{
+    font-size: 1.8em;
+    color:white;
+}
+/* h3 elements */
+h3{
+    color:white;
+}
+/* h4 elements */
+h4{
+    font-size: 1em;
+    color: white;
+}
+/* p elements */
+p{
+    font-size: 1.2em;
+}
+
+/*---------------NAVIGATION---------------*/
+nav {
+	background-color: black;
+	position: relative;
+	padding: 50px 0 0 200px; /* Padding: top 50px, right 0, bottom 0, left 200px */
+}
+
+/* visited links in navigation */
+nav a:visited {
+    color: #FFFFFF;
+}
+
+/* mobile menu icon */
+nav a.mobile_menu {
+	width: 32px; height: 32px;
+	background: url(_images/_menu.png) no-repeat 0 0;
+	background-size: contain;
+	position: absolute; top: 22px; left: 50%; margin-left: -16px;
+	display: none;
+}
+
+/* unordered list */
+nav ul {
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+}
+
+/* pseudo-element unordered list */
+nav ul::after {
+    content: ''; 
+    display: block; 
+    clear: both;}
+
+/* list items on hover */
+nav ul li:hover {
+    background-color: black;
+}
+
+/* nested unordered lists on hover */
+nav ul li:hover > ul {
+    display: 
+    block;
+}
+/* anchor links in list items */
+nav ul li a {
+    display: inline-block; 
+    color: #FFFFFF; 
+    padding: 10px 20px;
+    width: 125px; 
+    position: relative;}
+
+/* anchor links on hover */
+nav ul li a:hover {
+    background-color: #818867;
+}
+
+/* nested unordered list style */
+nav ul ul {
+    position: absolute; 
+    top: 100%; 
+    background-color: black; 
+    display: none;
+}
+/*li within nested ul*/
+nav ul ul li {
+    position: relative;
+}
+
+nav ul ul ul { 
+    left: 100%; 
+    top: 0px; 
+}
+
+/*top-level unordered list*/
+ Top level 
+nav > ul {
+    padding-left: 200px;
+}
+
+
+nav > ul > li {
+    float: left;
+}
+
+nav > ul > li > a {	
+    width: auto; 
+    padding: 10px 20px 15px 20px;
+}
+/*area-haspopup indicates a dropdown menu*/
+nav a[aria-haspopup="true"]::after {
+	content:'';
+	display: block;	width: 0; height: 0;
+	position: absolute;
+	top: 16px; right: 15px; 
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 4px solid #fff;
+}
+
+nav > ul > li > a[aria-haspopup="true"]::after {
+	left: 20px;	right: auto;
+	bottom: 6px; top: auto;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #fff;
+}
+
+/*------------HEADER-------------*/
+header {
+    height: 450px;
+    font-size: 1em;
+    color: #000000;
+    /* Center-align the text within the header */
+    text-align: center;
+    /* Center content horizontally */
+    justify-content: center;   
+}
+
+header:hover{
+    /* Changes the cursor to a pointer on hover */
+    cursor: pointer;
+}
+
+
+header a.logo{
+    /*doesn't affect the position of other elements*/
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 120px;
+    background: url(_images/_WebsiteLogo.png) no-repeat 0 0;
+    /* Ensure the logo image fits within the element */
+    background-size: contain;
+/*    control the stacking order of positioned elements*/
+    z-index: 1;
+    top: 15px;
+    left: 20px;
+}
+
+header p{
+    color:white;
+    background: black;
+    border-radius: 5px;   
+}
+
+header div p{
+    display: block;
+}
+/*----------INDEX PAGE--------------*/
+
+.musicplay{
+    align-items: center;
+    justify-content:center;
+    display: flex;
+    /* Allow flex items to wrap to next line*/
+    flex-wrap: wrap; 
+    padding: 10px;
+    
+}
+.musicplayer{
+    text-align:center;
+    padding: 25px; 35px;
+    outline: none;
+}
+/*Star Rating*/
+
+.rating{
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    /*places elements into a column*/
+    flex-direction: column;  
+    background: black;
+    padding: 20px 30px;
+    border: 1px solid #444;
+    /*adds rounded corners to the border*/
+    border-radius: 5px; 
+    width: 400px;
+}
+
+.rating .star-widget input{
+    /*takes away click option*/
+/*    display: none;*/
+    display:none;
+}
+
+.star-widget label{
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    /* Float the labels to the right */
+    float: right;
+    /*applies a transition over the period of .2 seconds*/
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+}
+input:checked ~ label{
+    color: #fd4;
+}
+
+header h3{
+    font-size: 30px;
+    text-shadow: 2px 5px 5px black;
+}
+
+/*---------Background page-----------*/
+/*have used the same card elements for both index page and background page*/
+.card-one-background, .card-two-background{
+    display: flex;
+    border-radius: 10px;
+    padding 1px; 5px;
+}
+/*stying image elements on card 1*/
+.card-one-background img{
+    width: 100%;
+    height: auto;
+    
+}
+/*stying image elements on card 2*/
+.card-two-background img{
+    width:100%;
+    height:auto;
+}
+/*grid placement for card1*/
+.card-one-background{
+    grid-column: 2/3;
+    grid-row: 3;
+    }
+/*grid placement for card2*/
+.card-two-background{
+    grid-column: 2/3;
+    grid-row: 4;
+    }
+
+.card2{
+    background-color: white;
+}
+.card2 h3 {
+    margin:30px;
+    text-align: center;
+    padding 2px; 5px;
+    color: black;
+}
+.card h3{
+    color: black;
+}
+
+.card2 p{
+    color: black;
+    margin:30px;
+    padding: 2px;
+}
+.card2{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.history-img-section2{
+    grid-column:2/3;
+}
+.card-one-background h4{
+    background: black;
+    padding: 10px;
+    width: 70%;
+    margin: auto;
+    color: white;
+    border-radius: 20px;
+}
+
+
+/*-------GENRES PAGE -------*/
+
+#Genres{
+    width:100%;
+    padding: 70px 0;
+    background-color: #818867;
+    border-radius: 10px;
+}
+
+.Genre-box{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /*centering an element horizontally*/
+    margin: auto;
+}
+
+.single-service{
+    /*flex basis sets the size of the flex box*/
+    flex-basis: 30%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color:white;
+    position:relative;
+}
+
+.single-service img{
+    width:100%;
+    border-radius: 7px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor:pointer;
+    /*sets a gradient background colour*/
+    background: linear-gradient(rgba(0,0,0,0.5),#818867);
+    opacity: 0;
+/*transiton of overlay gradient*/
+    transition: .5s;
+}
+
+.single-service:hover .overlay{
+/*1 = 100% opacity*/
+    opacity: 1; 
+}
+
+hr{
+    background: white;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+
+.service-info{
+    width: 80%;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    opacity: 0;
+    /*moves the element horizontally X axis/ taken over the time of 1 second*/
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+.service-info p{
+    font-size: 15px;
+}
+
+.single-service:hover .service-info{
+    bottom: 25%;
+    opacity: 1;
+}
+
+/*--------INSPIRATION PAGE--------*/
+.inspiration{
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    padding-top: 100px;
+    border-radius: 10px;
+    /*background of 255, 255, 255, with a opacity of .9*/
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.inspiration p{
+    color: black;
+    width: 80%;
+    margin: auto;
+    
+}
+
+.inspiration-col{
+    flex-basis: 25%;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    /*text is put to the left side*/
+    text-align: left;
+}
+
+.inspiration-col h3{
+    color: #818867;
+    text-align: center;
+}
+
+.inspiration-col p{
+    background-color:#818867; 
+    border-radius: 30px;
+    margin: auto;
+    padding: 30px;
+}
+
+/*-----------NEWS PAGE-----------*/
+.news{
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    padding-top: 100px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.news p{
+    color: black;
+}
+
+.news-col{
+    flex-basis: 40%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.news-col img{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.news-col h3{
+    color: #818867;
+    text-align: center;
+}
+
+.news-col p{
+    background-color:#818867; 
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+}
+/*blog left - ended up being placed above*/
+.blog-left{
+    flex-basis: 65%;
+}
+
+.blog-left img{
+    width:100%;
+}
+
+.blog-left h2{
+    color: #818867;
+    /*font weight is thickness*/
+    font-weight: 600;
+    margin: 30px 0;
+}
+
+.blog-left p{
+    color: white;
+    padding: 0;
+}
+
+.blog-right{
+    flex-basis: 50%;
+    padding: 5px 0;
+    background-color: black;
+    
+    
+}
+
+.blog-right h3{
+    background: #818867; 
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.blog-right div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px;
+    /*creates a box border*/
+    box-sizing: border-box;
+}
+
+.comment-box{
+    border: 1px solid #818867;
+    margin: 50px 0;
+    padding: 10px 20px;
+    background:rgba(255, 255, 255, 0.9);
+}
+
+.comment-box h3{
+    text-align: left;
+    color: black;
+}
+
+.comment-form input, .comment-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    background: #818867;
+}
+
+
+/*----------ABOUT PAGE------------*/
+
+#feature{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+.title-text{
+    text-align: center;
+}
+
+.title-text p{
+    font-size:30px;
+    color: #818867;
+    font-weight: bold;
+}
+
+.feature-box{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align:center;
+}
+
+.features{
+    flex-basis: 50%;
+}
+
+.features p{
+    color:white;
+}
+
+.features-img{
+    flex-basis: 50%;
+    margin:auto;
+}
+
+.features-img p{
+    color: black;
+}
+
+.features h3{
+    font-size:25px;
+    color: #818867;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 500;
+    
+}
+
+.features-img img{
+    width: 70%;
+    border-radius: 10%;
+}
+
+.features p{
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 200;
+    color: #818867;
+    
+}
+
+.features-discription{
+    display:flex;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.feature-icon span{
+    color: black;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    border: 1px 
+}
+
+.feature-text p {
+    padding: 0 20px;
+/*Sets this property to its default value.*/
+    text-align: initial;
+}
+
+/*------CONTACT PAGE----------*/
+
+#team{
+    width: 100%;
+    padding: 70px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+.team-col p {
+    color: black;
+    font-size: 18px;
+}
+
+.teammember{
+    display:flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.teammember img{
+    width: 60%;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.team-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #818867;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.team-col:hover{
+   transform: translateY(-7px);
+    cursor: pointer;
+}
+
+.team-col small{
+    color: black;
+}
+
+.team-row{
+    width:80%;
+    margin: auto;
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.teammember-info i{
+    margin-left:10px;
+    color: black;
+    font-size: 25px;
+}
+
+.teammember-info small{
+    color: blue;
+    
+}
+
+.teammember-info h4{
+    color: black;
+}
+
+
+/*---------TIMELINE PAGE------------*/
+
+/*Category section*/
+.index-category{
+    width: 70%;
+    padding: 0px; 5px;
+    background-color: white;
+    grid-row: 3/4;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.index-category p{
+    color: black;
+    text-align: center;
+    padding-bottom: 40px;
+    flex-basis: 100%;
+    font-size: 1.5em;
+}
+
+.index-category-box{
+    width: 180px;
+    height: 200px;
+    background-color: #111;
+    background-repeat: no-repeat;
+    /*covers background area*/
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+}
+/*Background images for category*/
+.index-category-box:nth-child(2) {
+    background-image: url(_images/_House2.jpeg);
+    
+}
+
+.index-category-box:nth-child(3) {
+    background-image: url(_images/_House1.jpeg);
+}
+
+.index-category-box:nth-child(4) {
+    background-image: url(_images/_House4.jpeg);
+}
+
+.index-category-box:nth-child(5) {
+    background-image: url(_images/_House5.jpeg);
+}
+
+.index-category-box h3{
+    font-size: 30px;
+    line-height: 24px;
+    color:white;
+    text-align: center;
+    /*drop down shadow*/
+    text-shadow: 0px 4px 8px black;
+    z-index: 100;
+}
+
+.dark-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    border-radius: 10px;
+    opacity: 0.5;
+    /*Smoother transition / control the speed of the transition*/
+    transition: all ease-in-out 200ms;
+}
+
+.index-category-box:hover .dark-overlay{
+    opacity: 0;
+}
+
+.timeline-deats{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.timeline-deats h2{
+    color: #818867;
+    font-size: 4em;
+    text-shadow: 10px 5px 10px black;
+}
+
+.timeline-info{
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px; 
+    display: flex;
+    flex-direction: row;
+    align-items:center; 
+    
+}
+
+.timeline-info p{
+    padding: 20px 40px;
+}
+
+.timeline-info h3{
+    color: black;
+    padding-left: 20px;
+}
+
+.timeline-info2 h3{
+    padding-left: 20px;
+}
+
+.timeline-info img{
+    display: flex;
+    max-width: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.timeline-info2{
+    background: rgba(129, 136, 103, 0.9);
+    border-radius: 5px; 
+    display: flex;
+    align-items:center;
+}
+
+.timeline-info2 p{
+    padding: 20px 40px;
+}
+
+/*---------FOOTER-----------*/
+ footer {
+    /*placement on column and row*/
+    grid-column: 1/4;
+    grid-row: 5;
+    background: white;
+    }
+/*footer font colour*/
+footer h2 {
+    color: black;
+}
+
+/*FLEX LAYOUT*/
+.card-one, .card-two {
+    display: flex;
+    /*content box details*/
+    border-radius: 10px;
+    padding: 1px; 5px;
+    }
+
+.card h3 {
+    padding: 2px 10px;
+    margin: 30px;
+    text-align: center;
+}
+
+.card p {
+    margin: 30px;
+    padding: 2px;
+}
+
+.card{
+    background-color: #818867;
+    border-radius: 10px;
+
+
+}
+
+.card-one img, .card-two img {
+	width: 100%;
+	height: auto; 
+}
+/*text under element*/
+figcaption {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Connect img {
+    width:42px;
+    height: 42px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.Connect img:hover{
+    background-color: #818867;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+/*-----------GRID LAYOUT-----------*/
+
+body {
+    /*grid layout for webpage*/
+    display: grid;
+    /*3 columns each end is 15em and middle is auto filling out the remaining middle space*/
+    grid-template-columns: 15em auto 15em;
+    /*repeating 6 autio rows*/
+    grid-template-rows: repeat(6, auto);
+    /*row gap of 10px which is between each block*/
+    grid-row-gap: 10px;
+}
+
+ header {
+    grid-column: 2/3;
+    grid-row: 2;
+    }
+
+ nav {
+    grid-column: 1/4;
+    grid-row: 1;
+    }
+
+.card-one {
+    grid-column: 2/3;
+    grid-row: 3;
+    }
+
+.card-two {
+    grid-column: 2/3;
+    grid-row: 4;
+    }
+
+#feature{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+#Genres{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.inspiration{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.news{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.timeline-deats{
+    grid-row 3/4;
+    grid-column: 2/3;
+}
+
+
+.news-content{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.comment-box{
+    grid-row: 5/6;
+    grid-column: 2/3;
+}
+
+.blog-right{
+    grid-row: 4/5;
+    grid-column: 2/3;
+}
+#team{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+footer{
+    grid-row: 8/9;
+}
+/*footer is placed so far down so it can fit all the content for the timeline page*/
+
+/*-------------MEDIA QUERIES----------*/
+/*media queiry for medium screen - ipad / each element is taken from the large screen and is changed below to fit the screen specs*/
+@media screen and (max-width: 1200px){
+    
+    body{
+        display: grid; 
+        grid-template-columns: 5em auto 5em;
+        grid-column-gap: 10px;
+        
+    }
+    
+    .card-one img, .card-two img{
+        display: none;
+    }
+    
+    .card-one, .card-two{
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        
+    }
+    
+    .card{
+        width: 100%;
+        margin: auto;
+        flex-basis: 100%;
+    }
+    
+    .card-one img, .card-two img{
+        width: 50%;
+        height: 50%;
+        
+        
+        
+    } 
+    
+    .rating{
+    flex-basis: 90%;
+        width: 90%;
+    }
+    
+    .star-widget label{
+    font-size: 28px;
+}
+    
+    #heading-3{
+        font-size: 30px;
+    }
+    
+    /*background*/
+    
+    .card-one-background{
+        display: block;
+    }
+    
+    .card p, .card2 p{
+        font-size: 20px;
+        padding: 5px 0;
+        margin: 20px;
+    }
+    
+    #heading-3{
+        padding-top: 15px;
+    }
+
+    /*genres*/
+    
+    .single-service{
+        flex-basis: 45%;
+        margin: 10px;
+    }
+    
+    .service-info p{
+        font-size: 18px;
+    }
+    
+    hr{
+        margin: 10px auto;
+    }
+    
+    .single-service:hover .service-info{
+        bottom: 10% 
+    }
+    
+    /*Contact*/
+    
+    .team-col{
+        flex-basis: 45%;
+    }
+    
+    /*About*/
+    
+    .title-text p{
+    font-size: 20px;
+    }
+    
+    .features{
+        flex-basis: 100%;
+    }
+    
+    .features-img{
+        flex-basis: 80%;
+    }
+    
+    .features-img img{
+    width: 80%;
+}
+    
+    /*Timeline*/
+    
+    .index-category-box{
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    border-radius: 10px;
+    position: relative;
+    padding: 5px;      
+}
+    
+    .dark-overlay{
+    border-radius: 10px;
+    
+}
+    
+    .timeline-info img{
+        border-radius: 10px;
+    }
+    
+    .index-category{
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+    }
+    
+    .timeline-info{
+    flex-direction: column; 
+}
+    
+    .timeline-info2{
+        flex-direction: column;
+    }
+
+    /*Inspiration*/
+
+    .inspiration{
+        width: 80%; 
+        margin: auto;
+    }
+    
+    inspiration-col{
+    flex-basis: 50%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+    
+    .inspiration-col iframe{
+        width:auto;
+        height: auto;
+    }
+    
+    .row{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin: auto;
+}
+    
+    /*nav*/
+    
+    .nav ul li a{
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+/*media query for phone size*/
+@media screen and (max-width: 500px){
+    
+    body{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    
+    .card-one img, .card-two img{
+        display: none;
+    }
+    
+    header h1{
+        font-size: 45px;
+    }
+    
+    header p{
+        padding: 5px 0; 
+        width: 80%;
+        margin: auto;
+    }
+    
+    header h2{
+        display: none;
+    }
+    
+    header div p{
+    display: none;
+    background: none;
+}
+    
+    /*---Nav---*/
+    
+    nav {
+	padding: 50px 0 0 100px; ;
+}
+    
+    /*---About---*/
+    
+    .title-text p{
+    font-size: 25px;
+    }
+    
+    .features{
+        flex-basis: 100%;
+    }
+    
+    .features-img{
+        flex-basis: 100%;
+    }
+    
+    .features-img img{
+    width: 100%;
+}
+    
+    /*---Genres---*/
+    
+    .single-service{
+        flex-basis: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .service-info p{
+        font-size: 18px;
+    }
+    
+    hr{
+        margin: 5px auto;
+    }
+    
+    .single-service:hover .service-info{
+        bottom: 15% 
+    }
+    
+    /* team */
+    .team-col{
+        flex-basis: 100%;
+    }
+    
+    /*Timeline*/
+    
+    .index-category-box{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px 10px 5px 5px;
+    position: relative;
+    padding: 0px;
+        
+}
+    
+    .timeline-info{
+    width: 90%;
+    margin: auto;
+    }
+    
+    .timeline-info2{
+    width: 90%;
+    margin: auto;
+    }
+    
+    .timeline-info img{
+        max-width: 70%;
+        border-radius: 10px;
+    }
+    
+    .timeline-info2{
+    width: 80%;
+    }
+    /*background*/
+    .card-one-background, .card-two-background{
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    flex-basis: 100%;
+        
+}
+    
+    /*footer*/
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /*News*/
+
+    .news{
+        margin: auto;
+        width: 80%;
+    }
+    
+    .news-col{
+    flex-basis: 100%;
+    }
+    
+    .blog-left{
+    flex-basis: 100%;
+    }
+    
+    .comment-box{
+        flex-basis: 100%;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .blog-right{
+        width: 80%;
+        margin: auto;
+    }
+    
+    /*inspiration*/ 
+    
+    .inspiration{
+        width: 90%;
+        margin: auto;
+    }
+    
+    .inspiration-col iframe{
+        width:auto;
+        height: auto;
+    }
+    
+    .inspiration-col{
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+}
+    
+    /*index*/
+    
+    .card-one, .card-two{
+        flex-direction: column;
+    }
+    
+    .background-image{
+    background-image: url(_images/_House3.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+    
+    .card{
+        width: 90%;
+        margin: auto;
+        flex-basis: 100%;
+    }
+    
+    .rating{
+        flex-basis: 100%;
+        margin: 0 0;
+        width: 85%;
+    }
+    
+    .star-widget label{
+    font-size: 25px;
+}
+    
+    #heading-3{
+        font-size: 20px;
+    }
+    
+}
+    
+
+
+
+
